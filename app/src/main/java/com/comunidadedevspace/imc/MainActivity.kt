@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity() {
         // Recuperar os componentes EditText
         // Criar uma variável e associar(=) o componente de UI.
 
-        val edtpeso = findViewById<TextInputEditText>(R.id.edtpeso)
-        val edtaltura = findViewById<TextInputEditText>(R.id.edtaltura)
+        val edtpeso = findViewById<TextInputEditText>(R.id.edt_peso)
+        val edtaltura = findViewById<TextInputEditText>(R.id.edt_altura)
         val btnCalcular = findViewById<Button>(R.id.btn_calcular)
 
         btnCalcular.setOnClickListener {
@@ -47,6 +47,15 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this,ResultActivity::class.java)
                 intent.putExtra(KEY_RESULT, resultado)
                 startActivity(intent)
+
+                // CORES
+                // Edit Texte Background + ícone
+                // Gradiente + ícone + Título + Descrição
+
+
+
+
+
 
 
             }

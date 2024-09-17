@@ -35,12 +35,23 @@ class ResultActivity : AppCompatActivity() {
         } else if(result > 25.0f && result <= 29.9f){
             classificacao = "SOBREPESO"
         } else if(result > 30.0f && result <= 39.9f){
-            classificacao = "OBSEDIDADE"
+            classificacao = "OBESIDADE"
         } else if(result > 40.0f){
             classificacao = "OBESIDADE GRAVE"
         }
 
         tvClassif.text = classificacao
+
+         // CORES
+        // Edit Texte Background + ícone
+        // Gradiente + ícone + Título + Descrição
+
+
+
+
+
+
+
 
 
 
