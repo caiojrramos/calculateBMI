@@ -1,7 +1,10 @@
 package com.comunidadedevspace.imc
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
@@ -12,13 +15,51 @@ class MainActivity : AppCompatActivity() {
         // Recuperar os componentes EditText
         // Criar uma variável e associar(=) o componente de UI.
 
-        val peso = findViewById<TextInputEditText>(R.id.edtpeso)
-        val altura = findViewById<TextInputEditText>(R.id.edtaltura)
-        val botão = findViewById<TextInputEditText>(R.id.btn_calcular)
+        val edtpeso = findViewById<TextInputEditText>(R.id.edt_peso)
+        val edtaltura = findViewById<TextInputEditText>(R.id.edt_altura)
+        val btnCalcular = findViewById<Button>(R.id.btn_calcular)
 
-        botão.setOnClickListener {
-            val spacepeso = peso.text
-            val spaceatura = altura.text
+        btnCalcular.setOnClickListener {
+            val pesoStr: String = edtpeso.text.toString()
+            val alturaStr: String = edtaltura.text.toString()
+
+            if(pesoStr == "" || alturaStr == ""){
+
+
+                Snackbar.make(
+                    edtpeso,
+                    "Preencha todos os campos",
+                    Snackbar.LENGTH_LONG
+                )
+                    .show()
+            } else {
+
+                    val peso = pesoStr.toFloat()
+                    val altura = alturaStr.toFloat()
+
+                val alturaQ2 = altura * altura
+                val resultado = peso / alturaQ2
+
+                // Criamos a tela secundária. Agora teremos que jogar o resultado lá
+                // criar um layout para a próxima tela
+                // Iremos criar uma INTENT explícita.
+
+                val intent = Intent(this,ResultActivity::class.java)
+                intent.putExtra(KEY_RESULT, resultado)
+                startActivity(intent)
+
+                // CORES
+                // Edit Texte Background + ícone
+                // Gradiente + ícone + Título + Descrição
+
+
+
+
+
+
+
+            }
+
 
 
 
