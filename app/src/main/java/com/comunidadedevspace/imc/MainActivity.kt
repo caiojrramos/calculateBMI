@@ -12,8 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Recuperar os componentes EditText
-        // Criar uma variável e associar(=) o componente de UI.
+     
 
         val edtpeso = findViewById<TextInputEditText>(R.id.edt_peso)
         val edtaltura = findViewById<TextInputEditText>(R.id.edt_altura)
@@ -40,17 +39,13 @@ class MainActivity : AppCompatActivity() {
                 val alturaQ2 = altura * altura
                 val resultado = peso / alturaQ2
 
-                // Criamos a tela secundária. Agora teremos que jogar o resultado lá
-                // criar um layout para a próxima tela
-                // Iremos criar uma INTENT explícita.
+         
 
                 val intent = Intent(this,ResultActivity::class.java)
                 intent.putExtra(KEY_RESULT, resultado)
                 startActivity(intent)
 
-                // CORES
-                // Edit Texte Background + ícone
-                // Gradiente + ícone + Título + Descrição
+              
 
 
 
